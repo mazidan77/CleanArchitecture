@@ -16,6 +16,11 @@ namespace CleanArchitecture.Infrastrucure
         }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicatinDbContext).Assembly);
+        }
         public virtual DbSet<Book>Books { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
 
