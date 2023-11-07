@@ -10,13 +10,10 @@ using System.Threading.Tasks;
 namespace CleanArchitecture.Infrastrucure.Configs
 {
     public class BookConfig: IEntityTypeConfiguration<Book>
-
     { 
-
         public void Configure(EntityTypeBuilder<Book>builder)
         {
             builder.Property(x => x.Title).IsRequired().HasMaxLength(200);
-
         }
     }
 }
