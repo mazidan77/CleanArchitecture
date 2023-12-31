@@ -15,6 +15,12 @@ namespace CleanArchitecture.Infrastrucure.Configs
         public void Configure (EntityTypeBuilder<Author> builder)
         {
             builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
+            builder.HasData(
+                new Author
+                {
+                    Id = 1,
+                    Name = "test1"
+                });
         }
     }
 }
