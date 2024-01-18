@@ -8,5 +8,6 @@ namespace CleanArchitecture.Domain.Dtos.BookDto
 {
     public class BookPostDto :BookBaseDto
     {
+      public int AuthorId { get; set; }
     }
 }

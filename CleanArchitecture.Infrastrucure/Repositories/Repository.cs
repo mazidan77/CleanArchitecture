@@ -18,6 +18,12 @@ namespace CleanArchitecture.Infrastrucure.Repositories
             _dbContext= dbContext;
         }
 
+        public bool Any(Expression<Func<TEntity, bool>> any)
+        {
+            IQueryable<TEntity> query = _dbContext.Set<TEntity>();
+            return query.Any(any);
+        }
+
         public void Add(TEntity entity)
         {
             _dbContext.Set<TEntity>().Add(entity);

@@ -9,6 +9,8 @@ namespace CleanArchitecture.Domain.IRepositories
 {
     public interface IRepository<T> where T: class
     {
+
+        bool Any(Expression<Func<T, bool>> any);
         void Add(T entity);
         Task AddAsync(T entity);
         void AddRange(IEnumerable<T> list);

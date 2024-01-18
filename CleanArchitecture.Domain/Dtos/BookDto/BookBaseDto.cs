@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Domain.Dtos.BookDto
 {
-    public class BookBaseDto
+    public class BookBaseDto 
     {
-        public int Title { get; set; }
+        public string Title { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,19 @@ namespace CleanArchitecture.Infrastrucure
 {
     public class ApplicatinDbContext:DbContext
     {
-        public ApplicatinDbContext(DbContextOptions<ApplicatinDbContext> options):base(options) 
+        public ApplicatinDbContext(DbContextOptions<ApplicatinDbContext> options):base(options)
         {
-
+            
         }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+           
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicatinDbContext).Assembly);
+            base.OnModelCreating(modelBuilder);
+          
+          
         }
         public virtual DbSet<Book>Books { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
